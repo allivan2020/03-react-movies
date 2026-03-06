@@ -1,5 +1,5 @@
 import toast from 'react-hot-toast';
-import styles from './SearchBar.module.css'; // Исправил путь на ./ так как файл рядом
+import styles from './SearchBar.module.css';
 
 interface SearchBarProps {
   onSubmit: (query: string) => void;
