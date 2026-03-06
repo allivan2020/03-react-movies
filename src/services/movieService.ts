@@ -1,5 +1,5 @@
-import axios, { type AxiosResponse } from 'axios';
-import type Movie from '../types/movie';
+import axios from 'axios';
+import type { Movie } from '../types/movie';
 
 interface TMDBResponse {
   results: Movie[];
@@ -17,7 +17,7 @@ const API = axios.create({
 });
 
 export const fetchMovies = async (query: string): Promise<Movie[]> => {
-  const response: AxiosResponse<TMDBResponse> = await API.get('search/movie', {
+  const response = await API.get<TMDBResponse>('search/movie', {
     params: {
       query,
       language: 'en-US',
